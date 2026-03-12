@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build FramePulse Debug x64",
+      "type": "shell",
+      "command": "msbuild",
+      "args": [
+        "KernelModePortfolio.sln",
+        "/t:Build",
+        "/p:Configuration=Debug;Platform=x64",
+        "/m"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "Build FramePulse Release x64",
+      "type": "shell",
+      "command": "msbuild",
+      "args": [
+        "KernelModePortfolio.sln",
+        "/t:Build",
+        "/p:Configuration=Release;Platform=x64",
+        "/m"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "Run FramePulse Client Demo",
+      "type": "shell",
+      "command": ".\\build\\FramePulseClient\\Debug\\FramePulseClient.exe",
+      "args": [
+        "demo"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

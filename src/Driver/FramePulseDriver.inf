@@ -1,0 +1,51 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider = %ProviderName%
+CatalogFile = FramePulseDriver.cat
+DriverVer = 03/12/2026,1.0.0.0
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,
+
+[SourceDisksFiles]
+FramePulseDriver.sys = 1
+
+[Manufacturer]
+%ProviderName% = Standard,NTamd64
+
+[Standard.NTamd64]
+%DeviceName% = FramePulse_Install, Root\FramePulseDriver
+
+[FramePulse_Install.NT]
+CopyFiles = DriverCopyFiles
+
+[DriverCopyFiles]
+FramePulseDriver.sys
+
+[FramePulse_Install.NT.Services]
+AddService = FramePulseDriver,0x00000002,FramePulse_Service
+
+[FramePulse_Service]
+DisplayName = %ServiceName%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\FramePulseDriver.sys
+
+[FramePulse_Install.NT.Wdf]
+KmdfService = FramePulseDriver, FramePulse_Wdf
+
+[FramePulse_Wdf]
+KmdfLibraryVersion = 1.33
+
+[Strings]
+ProviderName = "Kernel Mode Portfolio Lab"
+DiskName = "FramePulse Driver Disk"
+DeviceName = "FramePulse Telemetry Device"
+ServiceName = "FramePulse Telemetry Driver"
