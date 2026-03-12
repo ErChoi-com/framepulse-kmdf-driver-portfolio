@@ -2,20 +2,6 @@
 
 #include "Driver.h"
 
-DEFINE_GUID(
-    GUID_DEVINTERFACE_FRAMEPULSE,
-    0x52e2d8dc,
-    0x455c,
-    0x4299,
-    0xa7,
-    0x49,
-    0x4f,
-    0x58,
-    0x29,
-    0x55,
-    0x0d,
-    0xc0);
-
 NTSTATUS FramePulseEvtDeviceAdd(
     _In_ WDFDRIVER driver,
     _Inout_ PWDFDEVICE_INIT deviceInit)

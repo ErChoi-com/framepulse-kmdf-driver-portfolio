@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1 - 2026-03-12
+
+- Fixed shared device interface GUID linkage so the user-mode validation client builds successfully in GitHub Actions.
+
 ## v1.0.0 - 2026-03-12
 
 - Added the FramePulse KMDF driver solution with a root-enumerated software device, a versioned IOCTL contract, and bounded kernel telemetry.

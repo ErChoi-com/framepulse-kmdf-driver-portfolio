@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <SetupAPI.h>
+#include <initguid.h>
 
 #include <iomanip>
 #include <iostream>
