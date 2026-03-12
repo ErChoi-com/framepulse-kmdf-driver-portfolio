@@ -1,5 +1,10 @@
 # FramePulse KMDF Driver Portfolio Project
 
+[![CI](https://github.com/ErChoi-com/framepulse-kmdf-driver-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/ErChoi-com/framepulse-kmdf-driver-portfolio/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/ErChoi-com/framepulse-kmdf-driver-portfolio?display_name=tag)](https://github.com/ErChoi-com/framepulse-kmdf-driver-portfolio/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078d4)](https://github.com/ErChoi-com/framepulse-kmdf-driver-portfolio)
+[![Driver Framework](https://img.shields.io/badge/framework-KMDF-0a7f5a)](https://learn.microsoft.com/windows-hardware/drivers/wdf/)
+
 FramePulse is a root-enumerated KMDF driver and companion C++ test client built to showcase the exact skills a Windows kernel-mode graphics driver team screens for: kernel C/C++, versioned user-kernel interfaces, synchronization, telemetry, installation, and WinDbg-driven debugging.
 
 This project is intentionally portfolio-focused rather than hardware-dependent. It gives you a credible kernel artifact you can build, install in a Windows VM, exercise from user mode, and walk through in depth during an AMD or Microsoft driver interview.
@@ -39,3 +44,11 @@ The project is honest about scope while still giving you advanced talking points
 ## Fast start
 
 See docs/setup-guide.md first, then docs/windbg-playbook.md, then docs/interview-guide.md.
+
+## GitHub automation
+
+GitHub Actions builds the user-mode validation client on every push and pull request, and runs a repository hygiene pass that validates the PowerShell scripts and required documentation footprint.
+
+## Release assets
+
+The first GitHub release is intended to carry a source archive for quick review and a short changelog summarizing the scope of the portfolio project.

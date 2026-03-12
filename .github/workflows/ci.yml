@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  user-client-build:
+    name: user-client-build
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build FramePulseClient Debug x64
+        run: msbuild .\src\UserClient\FramePulseClient.vcxproj /t:Build '/p:Configuration=Debug;Platform=x64' /m
+        shell: pwsh
+
+  repo-hygiene:
+    name: repo-hygiene
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate PowerShell and docs
+        run: .\scripts\Test-RepoHygiene.ps1
+        shell: pwsh
